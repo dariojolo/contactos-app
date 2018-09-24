@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+.footer {
+    background-color: #252525;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    color: lightblue;
+  }
+  .grisMio{
+    background-color: rgb(53, 50, 50);
+    }
+    .navbar-custom {
+        background-color: #252525;
+    }
+  
