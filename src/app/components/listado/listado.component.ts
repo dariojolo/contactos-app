@@ -15,8 +15,9 @@ export class ListadoComponent implements OnInit {
 
   ngOnInit() {
     this._contactosService.getContactos().subscribe(
-      contactos => this.contactos = contactos
+      contactos => {this.contactos = contactos;console.log("Contactos: " + this.contactos[0].createAt);}
     );
+    
   }
 
 }

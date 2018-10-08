@@ -9,6 +9,8 @@ import { ContactosService } from './services/contactos.service';
 import { HomeComponent } from './components/home/home.component'
 import { Routes, RouterModule } from "@angular/router";
 
+import { HttpClientModule } from "@angular/common/http" ;
+
 const ROUTES:Routes = [
   {path:'', redirectTo:'/home', pathMatch:'full'},
   {path:'home', component: HomeComponent},
@@ -25,7 +27,8 @@ const ROUTES:Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    HttpClientModule
   ],
   providers: [ContactosService],
   bootstrap: [AppComponent]
