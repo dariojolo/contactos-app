@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -9,12 +10,15 @@ import { ContactosService } from './services/contactos.service';
 import { HomeComponent } from './components/home/home.component'
 import { Routes, RouterModule } from "@angular/router";
 
-import { HttpClientModule } from "@angular/common/http" ;
+import { HttpClientModule } from "@angular/common/http";
+import { FormComponent } from './components/listado/form/form.component' ;
 
 const ROUTES:Routes = [
   {path:'', redirectTo:'/home', pathMatch:'full'},
   {path:'home', component: HomeComponent},
-  {path:'listado', component: ListadoComponent}
+  {path:'contactos', component: ListadoComponent},
+  {path:'contactos/form',component: FormComponent},
+  {path:'contactos/form/:id',component: FormComponent}
 ];
 
 @NgModule({
@@ -23,12 +27,14 @@ const ROUTES:Routes = [
     HeaderComponent,
     FooterComponent,
     ListadoComponent,
-    HomeComponent
+    HomeComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ContactosService],
   bootstrap: [AppComponent]

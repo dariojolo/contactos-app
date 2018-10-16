@@ -1,6 +1,6 @@
 export class Contacto {
     id: number;
-    nombre: string;
+    nombre: string = "Dario";
     apellido: string;
     createAt: string;
     email: string;
